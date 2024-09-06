@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-practice</title>
+  </head>
+  <body>
+    <h1>설문조사</h1>
+    <form>
+      이름<input type="text" /> <br />
+      이메일<input type="email" placeholder="love@example.com" />
+      <h2>나이</h2>
+      <input type="radio" name="age" value="10" checked />10대
+      <input type="radio" name="age" value="20" />20대
+      <input type="radio" name="age" value="30" />30대
+      <input type="radio" name="age" value="40" />40대
+      <input type="radio" name="age" value="50" />50대
+      <input type="radio" name="age" value="over 60" />60대 이상
+      <h2>원하는 강의(복수응답가능합니다.)</h2>
+      <input type="checkbox" name="lecture" value="html" checked />html
+      <input type="checkbox" name="lecture" value="javascript" />javascript
+      <input type="checkbox" name="lecture" value="css" />css<br />
+      <textarea
+        rows="4"
+        cols="50"
+        placeholder="하고 싶은 말을 써주세요!"
+      ></textarea>
+      <input type="button" value="제출" />
+    </form>
+
+    <table border="1" cellspacing="0" cellpadding="10" width="300" height="200">
+      <tr>
+        <td colspan="2">1</td>
+        <td rowspan="2">2</td>
+      </tr>
+      <tr>
+        <td rowspan="2">3</td>
+        <td>center</td>
+      </tr>
+      <tr>
+        <td colspan="2">4</td>
+      </tr>
+    </table>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+      <tr>
+        <th>구분</th>
+        <th>음료</th>
+        <th>가격</th>
+        <th>이미지</th>
+      </tr>
+      <tr>
+        <td rowspan="2">커피류</td>
+        <td>
+          <a
+            href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=94"
+            target="_blank"
+            >아메리카노</a
+          >
+        </td>
+        <td>4200 원</td>
+        <td><img src="./coffee1.jpg" alt="카페 아메리카노" width="200" /></td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=128692"
+            target="_blank"
+            >돌체라떼</a
+          >
+        </td>
+        <td>4800 원</td>
+        <td><img src="./coffee2.jpg" alt="돌체라떼" width="200" /></td>
+      </tr>
+      <tr>
+        <td rowspan="2">주스류</td>
+        <td>
+          <a
+            href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=168016"
+            target="_blank"
+            >자바칩 프라푸치노</a
+          >
+        </td>
+        <td rowspan="2">5000 원</td>
+        <td><img src="./coffee3.jpg" alt="자바칩 프라푸치노" width="200" /></td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002502"
+            target="_blank"
+            >녹차 프라푸치노</a
+          >
+        </td>
+        <td><img src="./coffee4.jpg" alt="녹차 프라푸치노" width="200" /></td>
+      </tr>
+    </table>
+
+    <!-- semantic tag -->
+    <header>
+      <nav>
+        <ul>
+          <li><a>menu 1</a></li>
+          <li><a>menu 2</a></li>
+          <li><a>menu 3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>경제</h2>
+        <article></article>
+        <article></article>
+        <article></article>
+      </section>
+      <section>
+        <h2>사회</h2>
+        <article></article>
+        <article></article>
+        <article></article>
+      </section>
+    </main>
+    <footer>footer</footer>
+  </body>
+</html>
