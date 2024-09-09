@@ -1,0 +1,30 @@
+/* noonnu */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* font */
+.box {
+  width: 200px;
+  height: 200px;
+  font-size: 16px;
+  /* px, em, rem, % 등으로 지정 
+    px : 변하지 않는 절대값
+    em : 상위 요소 크기의 ??배로 하겠다.
+    rem : 문서의 최상위 요소, html 요소 크기의 몇 배로 할것인지 
+  */
+  font-weight: 700;
+  line-height: 4; /* 요소의 글꼴 크기의 배수로 지정 */
+  text-align: center;
+}
+
+.google {
+  font-family: "SUSE", sans-serif;
+}
+.noon {
+  font-family: "GmarketSansMedium", sans-serif;
+}

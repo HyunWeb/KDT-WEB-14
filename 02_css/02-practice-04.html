@@ -5,64 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      div {
-        width: 50%;
-        height: 500px;
-        padding-top: 15%;
-        box-sizing: border-box;
-        margin: auto;
-        border: 5px solid rgb(84, 84, 180);
-        border-radius: 20px;
+      .stripes {
+        font-size: 30px;
       }
-      h1:hover {
-        color: red;
-        cursor: pointer;
+      .stripes > div:nth-child(2n) {
+        background-color: yellow;
       }
-      h1 {
-        margin-left: 30px;
-        position: relative;
+      .stripes > div:nth-child(2n + 1) {
+        background-color: navy;
+        color: white;
       }
-      h1::after {
-        content: "";
-        position: absolute;
-        height: 3px;
-        width: 0px;
-        background-color: rgb(122, 171, 49);
-        bottom: -7px;
-        left: 5%;
-        transition-duration: 500ms;
-      }
-      h1:hover::after {
-        width: 200px;
-      }
-      a:active {
-        background-color: blue;
-      }
-      a {
-        text-decoration: none;
-        color: orange;
+      .stripes > div:nth-child(0) {
         font-weight: 900;
-        font-size: 20px;
-        border: 2px solid orange;
-        border-radius: 10px;
-        padding: 5px;
-        margin: 0 30px;
-        margin-top: 10px;
       }
-      input:focus {
+
+      .box::before {
+        content: "택시";
+      }
+      .box::after {
+        content: "빨리";
+      }
+
+      [disabled] {
+        background-color: red;
+      }
+      [placeholder="이름"] {
         background-color: orange;
       }
-      input {
-        height: 30px;
-        width: 200px;
+      input:not([placeholder]) {
+        background-color: blue;
       }
     </style>
   </head>
   <body>
+    <div class="stripes">
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+    </div>
+
+    <div class="box">여기요!</div>
+
+    <input type="text" placeholder="이름" />
+    <input type="password" value="pw" />
+    <input type="text" value="000-0000-0000" />
+    <input type="text" placeholder="핸드폰" />
+    <input type="text" placeholder="주민번호" disabled />
+
+    <!-- emmet -->
+
+    div{안녕}
+    <div>안녕</div>
+    div.name
+    <div class="name"></div>
+    div#num
+    <div id="num"></div>
+    div>div+p
     <div>
-      <h1>가상 클래스 선택자 실습</h1>
-      <a href="#">Button</a>
-      <input type="text" placeholder="입력하세요" />
+      <div></div>
+      <p></p>
     </div>
   </body>
 </html>

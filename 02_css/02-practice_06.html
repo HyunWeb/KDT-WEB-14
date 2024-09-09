@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: auto;
+        height: 200px;
+        background-color: orange;
+      }
+      #container > div {
+        width: 200px;
+        height: 100px;
+        display: inline-block;
+      }
+      #container > div:not(:last-child) {
+        margin-right: 30px;
+      }
+      #container > div:first-child {
+        background-color: blue;
+      }
+      #container > div:nth-child(2) {
+        background-color: green;
+      }
+      #container > div:last-child {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>JavaScript</div>
+    </div>
+  </body>
+</html>
