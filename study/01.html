@@ -5,17 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .fruits p:nth-of-type(2) {
-        color: green;
+      #container {
+        display: flex;
+        padding-left: 100px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        transition: opacity 2s, visibility 0s 2s;
+      }
+
+      .box.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .box {
+        line-height: 100px;
+        font-weight: 700;
+        text-align: center;
+        margin: 100px 50px;
       }
     </style>
   </head>
   <body>
-    <div class="fruits">
-      <span>딸기</span>
-      <p>수박</p>
-      <span>오렌지</span>
-      <p>망고</p>
+    <div id="container">
+      <div class="box">Hello</div>
+      <div class="box box2">Hello</div>
     </div>
+
+    <script>
+      const box1 = document.querySelector(".box");
+      const box2 = document.querySelector(".box2");
+      setTimeout(() => {
+        box1.classList.add("hidden"); // 1초 동안 서서히 사라지고, 1초 후에 visibility가 hidden으로 바뀜
+      }, 1800);
+      setTimeout(() => {
+        box2.classList.add("hidden"); // 1초 동안 서서히 사라지고, 1초 후에 visibility가 hidden으로 바뀜
+      }, 1000);
+    </script>
   </body>
 </html>

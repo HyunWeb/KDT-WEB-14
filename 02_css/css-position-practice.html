@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 500px;
+        height: 500px;
+        border: 5px solid black;
+        position: relative;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+      }
+      .itemOrigin {
+        background-color: red;
+      }
+      .item1 {
+        background-color: orange;
+        position: relative;
+        left: 50px;
+        top: 30px;
+      }
+      .item2 {
+        background-color: yellow;
+        position: absolute;
+        right: 30px;
+        bottom: 100px;
+      }
+      .item3 {
+        background-color: green;
+        position: fixed;
+        right: 100px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="box itemOrigin"></div>
+      <div class="box item1">item1</div>
+      <div class="box item2">item2</div>
+      <div class="box item3">item3</div>
+    </div>
+  </body>
+</html>

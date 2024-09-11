@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 300px;
+        height: 200px;
+        margin-bottom: 30px;
+      }
+
+      .grad-1 {
+        background: linear-gradient(grey, tomato);
+      }
+      .grad-2 {
+        background: linear-gradient(90deg, grey, tomato);
+        background: linear-gradient(to right, grey, tomato);
+      }
+      .grad-3 {
+        background: linear-gradient(90deg, grey, 75%, tomato);
+      }
+      .grad-4 {
+        background: linear-gradient(green, gray, 80%, tomato);
+      }
+
+      .background-image {
+        background-color: orange;
+        background-image: url("https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a");
+        width: 500px;
+        height: 500px;
+
+        /* background-repeat */
+        background-repeat: repeat; /* default */
+        background-repeat: repeat-x;
+        background-repeat: repeat-y;
+        background-repeat: no-repeat;
+
+        /* background-position */
+        background-position: center;
+        background-position: 10px 10px; /* x축, y축 */
+        /* 숫자값을 하나만 입력하면 x축에 대해서만 적용*/
+        background-position: 200px;
+        background-position: left top;
+
+        /* background-size */
+        /* cover: 더 넓은 값에 맞춤(최대한 다 덮게 크게 키움), contain: 더 짧은 값에 맞춤(최대한 들어가게 키움) */
+        background-size: auto;
+        background-size: 100px;
+        background-size: 100px 50px;
+        background-size: cover;
+      }
+
+      .scroll {
+        background-image: url("https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a");
+        overflow: scroll;
+        background-repeat: no-repeat;
+        width: 500px;
+        height: 500px;
+
+        /* background-attachment: 요소의 배경 이미지 스크롤 특성 */
+        background-attachment: scroll; /* default */
+        background-attachment: fixed;
+        background-attachment: local;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grad-1"></div>
+    <div class="grad-2"></div>
+    <div class="grad-3"></div>
+    <div class="grad-4"></div>
+
+    <hr />
+
+    <div class="background-image"></div>
+    <div class="scroll">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste assumenda,
+      amet dolorem eveniet, delectus maiores quisquam illo temporibus aspernatur
+      aperiam quia nisi ut, eligendi adipisci architecto fuga nam repudiandae.
+      Esse. Error ipsa, delectus tenetur veniam nobis excepturi nesciunt sunt at
+      assumenda, maxime eaque eveniet illo quae eum consequatur sint cumque
+      optio repellendus. Autem iure, recusandae voluptates quibusdam ullam nisi
+      officia! Possimus hic est inventore. Sunt, laborum nemo. Ducimus dolorem
+      vero deleniti accusantium, temporibus nesciunt illo hic quisquam
+      cupiditate maiores perferendis distinctio animi sunt pariatur alias magni
+      minima corporis, esse ab? Fugit veritatis a id natus accusamus. Nisi earum
+      iure vero exercitationem quibusdam asperiores dolorem fugiat non amet.
+      Minus, quae sit, illo perspiciatis cumque natus voluptates placeat neque
+      saepe vero quasi. Cumque ad voluptatum, excepturi quibusdam consequuntur
+      inventore reiciendis facere nulla quisquam porro expedita. Qui et quas
+      corporis quibusdam praesentium tempore fugit repellendus quasi, fuga
+      voluptatibus ipsa illum? Corporis, adipisci reprehenderit. Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. Iste assumenda, amet dolorem
+      eveniet, delectus maiores quisquam illo temporibus aspernatur aperiam quia
+      nisi ut, eligendi adipisci architecto fuga nam repudiandae. Esse. Error
+      ipsa, delectus tenetur veniam nobis excepturi nesciunt sunt at assumenda,
+      maxime eaque eveniet illo quae eum consequatur sint cumque optio
+      repellendus. Autem iure, recusandae voluptates quibusdam ullam nisi
+      officia! Possimus hic est inventore. Sunt, laborum nemo. Ducimus dolorem
+      vero deleniti accusantium, temporibus nesciunt illo hic quisquam
+      cupiditate maiores perferendis distinctio animi sunt pariatur alias magni
+      minima corporis, esse ab? Fugit veritatis a id natus accusamus. Nisi earum
+      iure vero exercitationem quibusdam asperiores dolorem fugiat non amet.
+      Minus, quae sit, illo perspiciatis cumque natus voluptates placeat neque
+      saepe vero quasi. Cumque ad voluptatum, excepturi quibusdam consequuntur
+      inventore reiciendis facere nulla quisquam porro expedita. Qui et quas
+      corporis quibusdam praesentium tempore fugit repellendus quasi, fuga
+      voluptatibus ipsa illum? Corporis, adipisci reprehenderit. Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. Iste assumenda, amet dolorem
+      eveniet, delectus maiores quisquam illo temporibus aspernatur aperiam quia
+      nisi ut, eligendi adipisci architecto fuga nam repudiandae. Esse. Error
+      ipsa, delectus tenetur veniam nobis excepturi nesciunt sunt at assumenda,
+      maxime eaque eveniet illo quae eum consequatur sint cumque optio
+      repellendus. Autem iure, recusandae voluptates quibusdam ullam nisi
+      officia! Possimus hic est inventore. Sunt, laborum nemo. Ducimus dolorem
+      vero deleniti accusantium, temporibus nesciunt illo hic quisquam
+      cupiditate maiores perferendis distinctio animi sunt pariatur alias magni
+      minima corporis, esse ab? Fugit veritatis a id natus accusamus. Nisi earum
+      iure vero exercitationem quibusdam asperiores dolorem fugiat non amet.
+      Minus, quae sit, illo perspiciatis cumque natus voluptates placeat neque
+      saepe vero quasi. Cumque ad voluptatum, excepturi quibusdam consequuntur
+      inventore reiciendis facere nulla quisquam porro expedita. Qui et quas
+      corporis quibusdam praesentium tempore fugit repellendus quasi, fuga
+      voluptatibus ipsa illum? Corporis, adipisci reprehenderit.
+    </div>
+  </body>
+</html>

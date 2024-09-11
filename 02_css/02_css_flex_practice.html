@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        background-color: antiquewhite;
+      }
+      #container > div {
+        background-color: rgb(216, 111, 132);
+        border: 1px solid black;
+        font-size: 30px;
+        /* line-height: 100px; */
+        text-align: center;
+        font-weight: 700;
+      }
+      /* 실습에 명시된 스타일 */
+      #container {
+        /* justify-content : 주 축의 정렬 방법 */
+        /* - flex-start : defalut */
+        /* - flex-end, center, space-between, space-around, space-evenly */
+
+        /* align-items : 교차 축의 한 줄 정렬 방법 */
+        /* - stretch : defalut */
+        /* - flex-start, flex-end, center, baseline */
+
+        /* align-content : 교차 축의 여러 줄 정렬 방법 */
+        /* - flex-wrap : wrap 되어있어야 작동 */
+        /* - flex-start : defalut */
+        /* - flex-start, flex-end, center, space-between, space-around, space-evenly */
+
+        width: 500px;
+        height: 500px;
+        display: flex;
+        /* 한줄일때 */
+        flex-wrap: nowrap;
+
+        /* row일때 가운데 정렬 */
+        flex-direction: row;
+        align-items: center;
+
+        /* column일때 가운데 정렬 */
+        flex-direction: column;
+        align-items: center;
+
+        /* 두줄일때 */
+        flex-wrap: wrap;
+        /* 아이템을 하나로 뭉쳐서 정렬 */
+        align-content: center;
+        justify-content: center;
+        /* 가로 수직정렬 */
+        flex-direction: row;
+
+        /* 세로 수직정렬 */
+        flex-direction: column;
+
+        /* 각각의 flex 줄로 정렬 */
+        align-content: normal;
+        align-items: center;
+        justify-content: center;
+
+        /* 가로 정렬 */
+        flex-direction: row;
+
+        /* 세로 정렬 */
+        flex-direction: column;
+      }
+      #container > div {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </body>
+</html>

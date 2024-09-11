@@ -28,3 +28,117 @@
 .noon {
   font-family: "GmarketSansMedium", sans-serif;
 }
+
+button {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#setBorder {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px 2vw 20% 5em;
+  margin: 100px auto;
+  background-color: pink;
+}
+
+/* box-sizing */
+.container {
+  /* box2를 나란히 두기 위해 사용*/
+  display: flex;
+  margin-bottom: 10em;
+}
+
+.box2 {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: lightblue;
+}
+
+.content-box {
+  box-sizing: content-box;
+}
+.border-box {
+  box-sizing: border-box;
+}
+
+/* 
+  장단점
+  content-box
+  장점 
+  - 콘텐츠 유연성 : 지정된 크기에 따라 동적으로 조정되므로, 디자인의 유연성이 높다. 
+  - 디자인 제어 : 패딩, 테두리를 분리해서 디자인 요소를 더 정교하게 제어가 가능하다. 
+  단점
+  - 레이아웃 복잡성 : 다 각각 계산해야 하므로 시간과 노력이 소요된다. 
+  - 계산 오류 가능성
+
+  border-box
+  장점
+  - 예측 가능성 : 총 너비와 높이가 예측하기 쉽다
+  - 유지보수, 간편한 계산 
+  단점
+  - 컨텐츠 영역 감소 : 실제 콘텐츠 영역이 작아진다. 
+*/
+#container {
+  display: flex;
+}
+.orangeBox {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+  margin-left: 20px;
+}
+#container > div:first-child {
+  box-sizing: border-box;
+}
+#container > div:last-child {
+  box-sizing: content-box;
+}
+/* visibility */
+.square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  display: inline-block;
+  transition-duration: 500ms;
+}
+.d-none {
+  display: none;
+  background-color: red;
+}
+
+.invisible {
+  visibility: hidden;
+  background-color: orangered;
+}
+
+.opacity-0 {
+  opacity: 0;
+  background-color: tomato;
+}
+.opacity-0:hover {
+  opacity: 1;
+}
+
+#square {
+  width: 200px;
+  height: 200px;
+  background-color: skyblue;
+}
+#square:hover {
+  opacity: 0;
+  visibility: hidden;
+}
+.scroll {
+  /* overflow: scroll; */
+  overflow-y: auto;
+}
+.auto {
+  /* overflow: auto; */
+  overflow-y: auto;
+}
