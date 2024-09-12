@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+
+        /* transition :
+          속성명(transition-property) 
+          지속시간(-단축으로 쓸때는 필수, transition-duration) 
+          타이밍함수(transition-timing-function) 
+          대기시간(transition-delay);
+        */
+        transition: height 2s ease 1s, width 2s ease 1s;
+      }
+      .box:hover {
+        width: 300px;
+        height: 200px;
+      }
+
+      #textBox {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        transition: width 1s ease 0.5s, height 1s ease 0.5s;
+        color: white;
+        overflow: auto;
+      }
+
+      #textBox:hover {
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <hr />
+    <div id="textBox">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores,
+      dolor ad? Nulla deserunt, sint eum facere pariatur nemo! Numquam ea ipsum
+      blanditiis culpa soluta quia error voluptate repudiandae dolore
+      consequuntur? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      Asperiores, dolor ad? Nulla deserunt, sint eum facere pariatur nemo!
+      Numquam ea ipsum blanditiis culpa soluta quia error voluptate repudiandae
+      dolore consequuntur? Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Asperiores, dolor ad? Nulla deserunt, sint eum facere pariatur nemo!
+      Numquam ea ipsum blanditiis culpa soluta quia error voluptate repudiandae
+      dolore consequuntur?
+    </div>
+  </body>
+</html>

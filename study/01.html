@@ -27,23 +27,18 @@
         text-align: center;
         margin: 100px 50px;
       }
+      body {
+        background-image: url("w3css.gif");
+        background-position: right bottom;
+      }
+
+      img:hover {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
     </style>
   </head>
   <body>
-    <div id="container">
-      <div class="box">Hello</div>
-      <div class="box box2">Hello</div>
-    </div>
-
-    <script>
-      const box1 = document.querySelector(".box");
-      const box2 = document.querySelector(".box2");
-      setTimeout(() => {
-        box1.classList.add("hidden"); // 1초 동안 서서히 사라지고, 1초 후에 visibility가 hidden으로 바뀜
-      }, 1800);
-      setTimeout(() => {
-        box2.classList.add("hidden"); // 1초 동안 서서히 사라지고, 1초 후에 visibility가 hidden으로 바뀜
-      }, 1000);
-    </script>
+    <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600" />
   </body>
 </html>
