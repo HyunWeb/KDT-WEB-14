@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수</title>
+    <script>
+      function log(data) {
+        return console.log(data);
+      }
+      // 변수 선언 & 할당
+
+      // var 키워드
+      /*
+      - 중복 선언, 재할당 모두 가능
+      - 할당 X -> undefined
+       */
+      var name = "홍길동";
+      var name = "홍길동 2"; // 중복 선언 O
+      var name2; // 선언, 할당 X => undefined
+      name = "나비";
+      log(name);
+      log(name2);
+
+      // let 키워드
+      /*
+      - 중복 선언 X, 재할당은 가능
+      - 할당 X -> undefined
+       */
+      let age = 20;
+      age = 30; //재할당 O
+
+      // const 키워드
+      /*
+        - 중복 선언 X, 재할당 X
+        - 처음 선언 시 초기화 필수! (선언과 할당을 동시에)
+       */
+      const grade = 4;
+
+      let mathScore = prompt("수학 점수를 입력하세요");
+      let engScore = prompt("영어 점수를 입력하세요");
+
+      let avg = (mathScore + engScore) / 2;
+      log(avg);
+    </script>
+  </head>
+  <body></body>
+</html>

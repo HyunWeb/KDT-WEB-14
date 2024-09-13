@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @media all and (min-width: 500px) {
+        body {
+          background-color: skyblue;
+        }
+      }
+      @media all and (max-width: 300px) {
+        body {
+          background-color: orange;
+        }
+      }
+      @media all and (max-height: 300px) {
+        p {
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          font-weight: 700;
+        }
+      }
+      @media all and (min-height: 500px) {
+        p {
+          background-color: green;
+        }
+      }
+
+      #container {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      @media all and (min-width: 700px) {
+        .box {
+          width: 200px;
+          height: 200px;
+          border-radius: 20px;
+          background-color: black;
+          border: 1px solid red;
+        }
+      }
+
+      @media all and (max-width: 699px) {
+        #container {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .box {
+          width: 200px;
+          height: 200px;
+          border-radius: 20px;
+          background-color: rgb(20, 59, 174);
+          border: 1px solid red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>미디어 쿼리 실습</p>
+    <div id="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
