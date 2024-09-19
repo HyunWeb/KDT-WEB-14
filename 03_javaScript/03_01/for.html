@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문</title>
+    <script>
+      /*
+        for (let i = 0; i < 10; i++) {
+          초기화 => i 라는 변수를 0으로 세팅
+          조건 => i가 10보다 작을 때 
+          증감식 => i를 1씩 키우겠다. 
+          ex) 2씩 증가 -> i += 2
+
+          실행할 코드
+          console.log("i : ", i);
+        }
+
+        출력 결과
+        i : 0
+        i : 1
+        ...
+        i : 9
+      */
+
+      // while 문
+      let i = 0;
+      while (i < 10) {
+        // i < 10이 참인 경우 실행할 코드
+        console.log("i : ", i);
+        i++;
+      }
+
+      let i2 = 0;
+      // true 조건 사용
+      while (true) {
+        console.log("i2 : ", i2);
+        i2++;
+        if (i2 > 10) {
+          console.log("while문 탈출");
+          break;
+        }
+      }
+
+      // 실습 1
+      for (let i = 1; i <= 10000; i++) {
+        if (i % 13 === 0 && i % 2 === 1) {
+          console.log(i);
+        }
+      }
+      // 실습 1 + @
+      // let num = prompt("숫자를 입력해주세요");
+      // for (let i = 1; i <= num; i++) {
+      //   if (i % 13 === 0 && i % 2 === 1) {
+      //     console.log(i);
+      //   }
+      // }
+
+      // 실습 2
+      for (let i = 2; i < 10; i++) {
+        console.log(`--- ${i}단 ---`);
+        for (let j = 1; j < 10; j++) {
+          console.log(`${i}x ${j} = ${i * j}`);
+        }
+      }
+
+      // 실습 3
+      let sum = 0;
+      for (let i = 0; i <= 100; i++) {
+        if (i % 2 === 0 || i % 5 === 0) {
+          sum += i;
+        }
+      }
+      console.log(sum);
+
+      // 반복문 제어
+      // break: 반복문 밖으로 탈출
+      // continue:
+
+      for (let i = 0; i < 10; i++) {
+        if (i == 5) continue;
+        console.log("i :", i);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

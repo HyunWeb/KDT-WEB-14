@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onclick</title>
+    <script>
+      // 함수 선언문 test
+      function test() {
+        console.log("클릭 이벤트!");
+      }
+
+      let num1 = Number("첫번째 숫자를 입력해주세요"); // 문자열로 입력받는다.
+      let num2 = Number(prompt("두번째 숫자를 입력해주세요"));
+
+      function add() {
+        alert(num1 + num2);
+      }
+      function sub() {
+        alert(num1 - num2);
+      }
+      function mul() {
+        alert(num1 * num2);
+      }
+      function divide() {
+        alert(num1 / num2);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- onclick 속성 : 클릭 할 때 발생하는 이벤트 처리 
+      test() 함수 호출 
+    -->
+    <button onclick="add()">더하기</button>
+    <button onclick="sub()">빼기</button>
+    <button onclick="mul()">곱하기</button>
+    <button onclick="divide()">나누기</button>
+  </body>
+</html>

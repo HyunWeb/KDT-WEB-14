@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문</title>
+    <script>
+      /*
+        if(조건 1) {
+          조건 1이 참일 때 실행될 코드
+        } else if (조건 2){
+          조건 2가 참일 때 실행될 코드
+          조건이 여러개 일때만 작성하면 됨(생략 가능)
+        }else {
+          위의 모든 조건들이 부합하지 않을 때 실행될 코드
+        }
+      */
+
+      if (3 > 5) {
+        // 조건이 거짓이라서 출력이 안된다.
+        console.log("3 > 5");
+      }
+
+      if (3 < 5) {
+        // 조건이 참이라서 출력이 된다.
+        console.log("3 < 5");
+      }
+
+      // 문자열 비교
+      let name = "황";
+
+      if (name == "이") {
+        console.log("이");
+      } else if (name == "김") {
+        console.log("김");
+      } else if (name == "박") {
+        console.log("박");
+      } else {
+        console.log("전부 거짓");
+      }
+
+      switch (name) {
+        case "김":
+          console.log("김");
+          break; // switch문 탈출
+        case "이":
+          console.log("이");
+          break;
+        case "황":
+          console.log("황");
+          break;
+        default:
+          // 기본값 (위에 해당하는 값이 없을 때 기본으로 실행되는 코드)
+          console.log("default");
+      }
+
+      // 3항 연산자
+      // 조건 ? 참일 때 : 거짓일 때
+      let a = 10;
+      if (a > 10) {
+        console.log("a가 10보다 크다.");
+      } else {
+        console.log("a가 10보다 크지 않다.");
+      }
+
+      a > 10
+        ? console.log("a가 10보다 크다.")
+        : console.log("a가 10보다 크지 않다.");
+
+      let b = a > 10 ? "a가 10보다 크다" : "a가 10보다 크지 않다.";
+      console.log(b);
+
+      // --- 실습 ---
+      let age = prompt("나이를 입력해주세요");
+      if (age >= 20) {
+        console.log("성인");
+      } else if (age >= 17) {
+        console.log("고등학생");
+      } else if (age >= 14) {
+        console.log("중학생");
+      } else if (age >= 8) {
+        console.log("초등학생");
+      } else {
+        console.log("유아");
+      }
+      11;
+      // --- 실습 2 ---
+      let now = new Date().getHours();
+      let hours = now >= 12 ? "오후" : "오전";
+
+      console.log(`현재는 ${now}시이고 ${hours}이다.`);
+    </script>
+  </head>
+  <body></body>
+</html>
