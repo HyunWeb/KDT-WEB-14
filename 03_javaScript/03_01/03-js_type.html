@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03_js_type</title>
+
+    <script>
+      /* 자료형
+        - 기본
+        - string : 문자열
+        - number : 숫자형
+        - boolean : 참, 거짓
+        - null : 아무것도 없는
+        - undefined : 정의되지 않는
+
+        -객체
+        - arrat(배열) : 데이터를 순차적으로 저장
+        - object(객체) : key - value 형태로 이루어진 데이터
+      */
+      // 1.string
+      let myName = "길동";
+      let emill = "gildong@naver.com";
+      let city = "서울";
+
+      console.log(myName);
+      console.log(emill);
+      console.log(city);
+
+      //  문자와 변수를 동시출력
+      console.log("내 이름은", myName, "이고 이메일은", emill, "입니다."); // , 로 이어 붙이기
+      console.log("내 이름은" + myName + "이고 이메일은" + emill + "입니다."); // 로 이어 붙이기
+      // 템플릿 리터럴
+      console.log(`내 이름은 ${myName}이고 이메일은 ${emill}입니다.`);
+      let gildong = `내 이름은 ${myName} 이고 이메일은 ${emill}입니다.`;
+      console.log(gildong);
+
+      // 2.number
+      let number = 123;
+      let opacity = 0.7;
+      console.log(number);
+      console.log(opacity);
+
+      // NAN : not a number
+      console.log("apple" - 3);
+
+      // 3. boolean
+      let checked = true;
+      let unchecked = false;
+
+      console.log(checked);
+      console.log(unchecked);
+
+      // 4. undefined
+      let undef;
+      console.log(undef);
+
+      //5. null
+      let empty = null;
+      console.log(empty);
+
+      // 6. array
+      let fruits = ["orange", "pineapple", "grape", "apple"];
+      let fruits2 = new Array("orange", "pineapple", "grape", "apple");
+
+      console.log(fruits);
+      console.log(fruits[0], fruits[2]);
+
+      let data1 = [1, "gildong", false, null, undefined];
+      console.log(data1);
+
+      // 배열 속성, 함수
+      console.log("length", fruits.length); // 길이
+      fruits.push("melon");
+      console.log("push", fruits);
+
+      //7. object
+      let cat = {
+        name: "나비",
+        age: 1,
+        isCute: true,
+        mew: function () {
+          console.log("냐옹1");
+          return "냐옹2"; // 반환값
+        },
+      };
+
+      console.log(cat);
+
+      // 점 표기법
+      // 객체 이름.key이름 -> 반환값 = value
+      console.log(cat.name);
+      console.log(cat.age);
+      console.log(cat.isCute);
+      console.log(cat.mew()); // 괄호를 붙여야 실행된다.
+
+      // 대괄호 표기법
+      // 객체이름['key이름'] -> 반환값 = value
+      console.log(cat["name"]);
+
+      //typeof 사용
+      let und;
+      console.log(typeof "문자");
+      console.log(typeof 123);
+      console.log(typeof true);
+      console.log(typeof cat); //object
+      console.log(typeof fruits); //object
+      console.log(typeof NaN); //number
+      console.log(typeof null); //object
+      console.log(typeof und);
+
+      //형전환
+      let mathScore = prompt("수학 점수를 입력하세요");
+      let engScore = prompt("영어 점수를 입력하세요");
+
+      let avg = (mathScore + engScore) / 2;
+      console.log(avg);
+
+      // 문자 형변환
+      // string(변환할 값), or 변환할 값.toString()
+      //toString() -> null, undefined 사용 X
+
+      let str1 = true;
+      let str2 = 123;
+      let str3 = null;
+
+      console.log(String(str1));
+      console.log(typeof String(str1));
+      console.log(typeof str1); // boolean 기준의 값은 변환이 안됨.
+
+      console.log(str1.toString());
+      console.log(typeof str1.toString());
+      console.log(typeof str1);
+
+      console.log(String(str3));
+      //console.log(str.toString()); //error
+
+      //숫자형변환
+      //Number(변환할 값)
+      let n1 = true;
+      let n2 = false;
+      let n3 = "123.9";
+
+      console.log(number(n1)); //1
+      console.log(number(n2)); //0
+      console.log(number(n3)); //123.9
+
+      //증감 연산자
+      let result1, result2;
+      let num1 = 10;
+      let num2 = 10;
+
+      result1 = num = num1++;
+      console.log("resurt1", result1);
+      console.log("num1", num1);
+
+      result2 = num = ++num2;
+      console.log("resurt2", result2);
+      console.log("num2", num2);
+    </script>
+  </head>
+  <body></body>
+</html>
