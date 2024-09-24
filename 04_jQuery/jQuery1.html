@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // $("선택자").동작함수();
+
+      function setvalue() {
+        // 값을 설정하기
+        $("#input1").val("setting");
+      }
+      function getValue() {
+        alert($("#input1").val());
+      }
+
+      function changeStyle() {
+        let span = document.querySelector("span");
+        // span.style = "font-size: 20px; color: red";
+        $("span").css("font-size", "20px");
+        $("span").css("color", "orange");
+      }
+
+      function changeAttribute() {
+        // JS
+        // let input = document.getElementById("input1");
+        // input.setAttribute("placeholder", "안녕하세요");
+        $("#input1").attr("placeholder", "안녕하세요");
+      }
+
+      function changeText() {
+        // Js
+        // let span = document.querySelector("span");
+        // span.innerText = "javascript!";
+        $("span").text("jQuery~");
+      }
+
+      function changeHTML() {
+        // JS
+        // let p = document.querySelector("p");
+        // p.innerHTML = "<h1>JavaScript</h1>";
+
+        $("p").html("<h1>jQuery</h1>");
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="input1" />
+
+    <button onclick="setvalue()">setValue</button>
+    <button onclick="getValue()">getValue</button>
+    <br />
+
+    <span>안녕</span>
+    <button onclick="changeStyle()">changeStyle</button>
+    <button onclick="changeAttribute()">changeAttribute</button>
+    <button onclick="changeText()">changeText</button>
+
+    <br />
+
+    <p style="background-color: orange">p태그</p>
+    <button onclick="changeHTML()">changeHTML</button>
+  </body>
+</html>
