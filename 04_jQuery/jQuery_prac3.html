@@ -121,9 +121,11 @@
       });
 
       function writeSchedule() {
-        // 이 함수를 채워주세요.
         let content = $("#content").val();
+        if (!target || content === "") return;
+        // 이 함수를 채워주세요.
         target.after($(`<b>${content}</b>`));
+        target.after(`<b>${content}</b>`);
 
         $("#date").val("");
         $("#content").val("");

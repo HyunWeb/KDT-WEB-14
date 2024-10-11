@@ -4,45 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      #box {
-        width: 100px;
-        height: 100px;
-        border: 1px solid black;
-        line-height: 100px;
-        text-align: center;
-        font-size: 20px;
-      }
-    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script>
-      window.onload = function () {
-        let box = document.getElementById("box");
+      $(function () {});
 
-        box.addEventListener("click", function (event) {
-          console.log(event.target);
-        });
+      jQuery("h1");
 
-        box.addEventListener("click", function () {
-          box.style.border = "3px solid blue";
-        });
+      $(document);
 
-        // box.onclick = function () {
-        //   box.style.backgroundColor = "red";
-        // };
+      $(function () {});
 
-        // box.onclick = function () {
-        //   box.style.border = "3px solid blue";
-        // };
+      $(".container");
 
-        function add(a, b) {
-          return a + b;
-        }
+      $("<h1></h1>");
 
-        console.log(add(3, 5));
-      };
+      // console.log(jQuery("h1").css("color", "red"));
+      console.log(document.querySelector(h1));
     </script>
   </head>
   <body>
-    <div id="box">box</div>
+    <h1></h1>
   </body>
 </html>

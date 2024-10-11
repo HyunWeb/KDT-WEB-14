@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elmgreen & Dragset: Spaces</title>
+    <!-- bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .header {
+        background-image: url("./img/background.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        position: relative;
+      }
+      .customPosiiton {
+        position: absolute;
+        z-index: 1;
+        top: 20%;
+      }
+      .header::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+      }
+      .headerFont {
+        font-size: 10rem;
+      }
+      .custom-bg {
+        background-color: rgb(25 28 31);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="text-white bg-dark">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">APMA</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >EXHIBITION</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">PROGRAM</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">MUSEUM SHOP</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <header class="header d-flex flex-column align-items-center py-5">
+        <div class="customPosiiton">
+          <h2 class="fs-3 text-white text-center">
+            아모레퍼시픽미술관 현대미술 기획전
+          </h2>
+          <h1 class="headerFont text-white text-center">
+            &lt;&lt;Space&gt;&gt;
+          </h1>
+          <p class="fs-2 text-white text-center">Elmgreen & Dragset</p>
+        </div>
+      </header>
+      <section class="px-5 w-75 m-auto">
+        <h2 class="text-center py-5 my-5 custom-bg rounded lh-base">
+          아시아 최대 규모로 선보이는 <br />
+          대규모 공간 설치 작업
+        </h2>
+        <div class="d-flex align-items-center">
+          <img src="img/house.jpg" alt="house" class="w-50" />
+          <div>
+            <h3 class="ps-4">집(House)</h3>
+            <p class="fs-4 ps-4">
+              작가들이 디자인한 집을 직접 들어간다. <br />
+              그 안의 다양한 요소들을 통해 <br />
+              가상의 거주자에 대한 단서를 살펴본다.
+            </p>
+          </div>
+        </div>
+        <div class="d-flex mt-5 flex-row-reverse align-items-center">
+          <img src="img/pool.jpg" alt="house" class="w-50" />
+          <div>
+            <h3 class="pe-4">수영장(pool)</h3>
+            <p class="fs-4 pe-4">
+              실제 규모의 수영장을 만나본다. <br />
+              그 속에서 공공장소의 쇠퇴와 <br />
+              공동체의 상실을 파악한다. <br />
+            </p>
+          </div>
+        </div>
+        <div class="d-flex mt-5 align-items-center">
+          <img src="img/theCloud.jpg" alt="house" class="w-50" />
+          <div>
+            <h3 class="ps-4">더 클라우드(The Cloud)</h3>
+            <p class="fs-4 ps-4">
+              실제 레스토랑을 옮겨놓은 듯한 작품이다. <br />
+              실제와 허구의 경계에 위치한 경험을 선사한다.<br />
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="w-75 m-auto rounded">
+        <h2 class="text-center py-5 my-5 custom-bg">아티스트</h2>
+        <div class="d-flex align-items-center justify-content-center">
+          <img src="./img/artist2.jpg" alt="아티스트 사진" class="w-25" />
+          <div class="ps-4">
+            <h3 class="fs-2">
+              마이크 엘름그린 <span class="fs-4">(1962 ~ )</span>
+            </h3>
+            <h3 class="fs-2">
+              잉가 드라그셋 <span class="fs-4">(1969 ~ )</span>
+            </h3>
+            <p class="fs-4">
+              1995년 결성된 북유럽출신의 아티스트 듀오이다. <br />
+              조각, 설치, 퍼포먼스 등 다양한 매체를 통해 고착화된 사회, 정치적
+              구조를 <br />
+              새롭게 바라볼 수 있는 시각을 제시한다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="w-75 m-auto rounded row gx-3 justify-content-center">
+        <h2 class="text-center py-5 my-5 custom-bg">예약</h2>
+        <div class="col-md-6">
+          <!-- Contact number (hidden) -->
+          <input type="hidden" name="contact_number" />
+
+          <!-- Full name -->
+          <div class="mb-3">
+            <label class="visually-hidden" for="user_name">Full name</label>
+            <input
+              class="form-control"
+              id="user_name"
+              name="user_name"
+              type="text"
+              placeholder="Full name"
+              required=""
+            />
+          </div>
+
+          <!-- Phone number -->
+          <div class="mb-3">
+            <label class="visually-hidden" for="user_phone">Phone number</label>
+            <input
+              class="form-control"
+              id="user_phone"
+              name="user_phone"
+              type="tel"
+              placeholder="Phone number"
+              required=""
+            />
+          </div>
+
+          <!-- Email address -->
+          <div class="mb-3">
+            <label class="visually-hidden" for="user_email"
+              >Email address</label
+            >
+            <input
+              class="form-control"
+              id="user_email"
+              name="user_email"
+              type="email"
+              placeholder="Email address"
+              required=""
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <!-- Guests -->
+          <div class="mb-3">
+            <label class="visually-hidden" for="guests">Guests</label>
+            <select class="form-select" id="guests" name="guests" required="">
+              <option value="1">1 person</option>
+              <option value="2" selected="">2 persons</option>
+              <option value="3">3 persons</option>
+              <option value="4">4 persons</option>
+              <option value="5">5 persons</option>
+            </select>
+          </div>
+
+          <!-- Date -->
+          <div class="mb-3">
+            <label class="visually-hidden" for="date">Date</label>
+            <input
+              class="form-control"
+              id="date"
+              name="date"
+              type="date"
+              value="2021-02-12"
+              required=""
+            />
+          </div>
+
+          <!-- Time -->
+          <div class="mb-3">
+            <label class="visually-hidden" for="time">Time</label>
+            <input
+              class="form-control"
+              id="time"
+              name="time"
+              type="time"
+              value="18:00"
+              required=""
+            />
+          </div>
+        </div>
+        <button type="button" class="btn btn-outline-info w-25 my-3">
+          예약하기
+        </button>
+      </section>
+      <footer class="custom-bg p-3 text-secondary mt-5">
+        ㈜아모레퍼시픽 <br />
+        서울특별시 용산구 한강대로 100 (한강로2가 181) <br />
+        T.02-6040-2345 ㅣ E. museum@amorepacific.com <br />
+        대표이사 : 김승환 /<br />
+        사업자등록번호 : 106-86-43373 통신판매업신고번호 :<br />
+        2017-서울용산-1308사업자 정보 확인 <br />
+        호스팅제공자 : (주)아모레퍼시픽
+      </footer>
+    </main>
+  </body>
+</html>
