@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get으로 정보 받기</title>
+    <style>
+      form {
+        width: 25vw;
+      }
+      fieldset {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Get으로 정보 받기</h1>
+    <form action="/practiceGet" method="get">
+      <label for="name">이름</label>
+      <input type="text" name="name" id="name" />
+
+      <fieldset>
+        <legend>성별</legend>
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="male" value="남자" />
+        <label for="female">여자</label>
+        <input type="radio" name="gender" id="female" value="여자" />
+      </fieldset>
+
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="year" id="year">
+          <% for(let i = 1990; i <= 2024; i++){ %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        년
+        <select name="month" id="month">
+          <% for(let i = 1; i <= 12; i++){ %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        월
+        <select name="day" id="day">
+          <% for(let i = 1; i <= 31; i++){ %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        일
+      </fieldset>
+
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" name="hobby" id="hobby1" value="여행" />
+        <label for="hobby1">여행</label>
+        <input type="checkbox" name="hobby" id="hobby2" value="패션" />
+        <label for="hobby2">패션</label>
+        <input type="checkbox" name="hobby" id="hobby3" value="음식" />
+        <label for="hobby3">음식</label>
+      </fieldset>
+      <button>회원가입</button>
+    </form>
+    <hr />
+
+    <h1>Post로 정보 받기</h1>
+    <form action="/practicePost" method="post" onsubmit="return submitF(this)">
+      <label for="name">이름</label>
+      <input type="text" name="name" id="name" />
+      <fieldset>
+        <legend>성별</legend>
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="male" value="남자" />
+        <label for="female">여자</label>
+        <input type="radio" name="gender" id="female" value="여자" />
+      </fieldset>
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="year" id="year">
+          <% for(let i = 1990; i <= 2024; i++){ %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        년
+        <select name="month" id="month">
+          <% for(let i = 1; i <= 12; i++){ %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        월
+        <select name="day" id="day">
+          <% for(let i = 1; i <= 31; i++){ %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        일
+      </fieldset>
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" name="hobby" id="hobby1" value="여행" />
+        <label for="hobby1">여행</label>
+        <input type="checkbox" name="hobby" id="hobby2" value="패션" />
+        <label for="hobby2">패션</label>
+        <input type="checkbox" name="hobby" id="hobby3" value="음식" />
+        <label for="hobby3">음식</label>
+      </fieldset>
+      <fieldset>
+        <legend>그밖에 입력 요소들</legend>
+        <label for="points">범위 지정(0 ~ 10)</label>
+        <input
+          type="range"
+          name="points"
+          value="points"
+          min="0"
+          max="10"
+        /><br />
+        <label for="date">날짜 선택</label>
+        <input type="date" name="date" id="date" />
+      </fieldset>
+      <button>회원가입</button>
+    </form>
+
+    <script>
+      function submitF(form) {
+        if (form.name.value == "") {
+          alert("이름을 입력해주세요");
+          return false;
+        }
+        if (
+          form.gender[0].checked == false &&
+          form.gender[1].checked == false
+        ) {
+          alert("성별을 선택해주세요");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

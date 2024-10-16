@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loginForm</title>
+    <style>
+      body {
+        background-color: rgb(32, 32, 32);
+      }
+      section {
+        background-color: rgb(254, 255, 251);
+        border-radius: 15px;
+        width: 30%;
+        margin: 10% auto;
+        text-align: center;
+        padding: 30px 0;
+      }
+      h2 {
+        font-size: 30px;
+      }
+      input {
+        margin-bottom: 10px;
+        width: 40%;
+        height: 30px;
+      }
+      button {
+        width: 80px;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h2>일반 폼 전송(파일 업로드)실습</h2>
+      <form
+        action="/upload/practice"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input type="text" name="userId" id="id" placeholder="아이디" /><br />
+        <input
+          type="password"
+          name="userPw"
+          id="pw"
+          placeholder="비밀번호"
+        /><br />
+        <input type="text" name="userName" id="name" placeholder="이름" /><br />
+        <input type="number" name="userAge" id="age" placeholder="나이" /><br />
+        <input type="file" name="userImg" id="img" /><br />
+        <button>회원가입</button>
+      </form>
+    </section>
+  </body>
+</html>
