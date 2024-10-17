@@ -1,0 +1,22 @@
+<!-- 댓글을 comment.js의 데이터를 받아서 뿌려주는 역할 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>댓글 목록</title>
+  </head>
+  <body>
+    <h1>댓글 모음</h1>
+    <a href="/">홈으로 이동하기</a>
+
+    <ul>
+      <% for( let i = 0; i < CommentInfos.length; i++ ) { %>
+      <li>
+        <b><%= CommentInfos[i].userid %></b>
+        <a href="/comment/<%= i + 1 %>"> - <%= CommentInfos[i].comment %></a>
+      </li>
+      <% } %>
+    </ul>
+  </body>
+</html>
