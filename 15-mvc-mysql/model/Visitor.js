@@ -20,6 +20,7 @@ const mysql = require("mysql2/promise");
 // - 요청이 들어오면 연결 풀에서 사용가능한 연결을 제공. 작업을 완료한 후 해당 연결을 반환
 // - 연결이 필요하지 않을 경우 자동 반환, 풀의 연결 수를 제한하고 관리를 최적화
 // - 일반적인 웹 서비스에 적합
+
 const pool = mysql.createPool({
   host: "localhost",
   user: "user",
@@ -49,4 +50,31 @@ const postVisitor = async (name, comment) => {
   return rows;
 };
 
-module.exports = { getVisitors, postVisitor };
+const getVisitor = async (id) => {
+  const query = "SELECT * FROM visitor WHERE id = ?";
+  const [row] = await pool.query(query, [id]);
+  console.log(row);
+  return row;
+};
+
+const patchVisitor = async ({ name, comment, id }) => {
+  // id를 가지고 name이랑 comment를 수정하는 쿼리
+  const query = "UPDATE visitor SET name = ?, comment = ? WHERE id = ?";
+  const [result] = await pool.query(query, [name, comment, id]);
+  console.log("update result", result);
+  return result;
+};
+
+const deleteVisitor = async (id) => {
+  const query = "DELETE FROM visitor WHERE id = ?";
+  const [result] = await pool.query(query, [id]);
+  console.log("delete result", result);
+  return result;
+};
+module.exports = {
+  getVisitors,
+  postVisitor,
+  getVisitor,
+  patchVisitor,
+  deleteVisitor,
+};

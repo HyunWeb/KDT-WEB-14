@@ -4,7 +4,6 @@ const PORT = 8000;
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -17,6 +16,10 @@ app.use(express.json());
 // [After] Router 객체로 라우터 분리
 const indexRouter = require("./routes/index"); // index는 생략 가능
 app.use("/", indexRouter); // localhost:PORT/ 경로를 기본으로 ./routes/index.js 파일에 선언한 대로 동작
+
+// 실습
+const userRouter = require("./routes/user");
+app.use("/user", userRouter); // localhost:PORT/user 경로를 기본으로 user.js 라우트 파일에서 처리
 
 // [404 error]
 // 나머지 코드가 무시되지 않도록 맨 마지막에 라우트로 선언

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="../static/login.js"></script>
+    <script src="../static/profile.js"></script>
+  </head>
+  <body>
+    <h1>프로필</h1>
+    <form name="ProfileForm">
+      <input type="text" name="username" placeholder="이름" />
+      <input type="text" name="id" placeholder="아이디" />
+      <input type="password" name="pw" placeholder="비밀번호" />
+      <button type="button" onclick="editProfile()">Edit Profile</button>
+      <button type="button" onclick="deleteProfile()">Delete Profile</button>
+    </form>
+  </body>
+</html>

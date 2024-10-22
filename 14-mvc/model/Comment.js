@@ -27,3 +27,10 @@ exports.commentInfos = () => {
     },
   ];
 };
+exports.userInfos = () => {
+  const userInfo = {
+    ID: "banana",
+    PW: "1234",
+  };
+  return userInfo;
+};

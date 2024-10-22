@@ -12,7 +12,9 @@ const router = express.Router();
 // [After]
 // -> Controller 사용으로 변경
 // 경로를 controller와 연결지어 사용 가능
-router.get("/", controller.main);
+// router.get("/", controller.main);
+router.get("/", controller.practice);
+router.post("/practiceLogin", controller.practiceLogin);
 router.get("/comments", controller.comments);
 router.get("/comment/:id", controller.comment);
 

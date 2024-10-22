@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login Page</title>
+
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <style>
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+      }
+      form {
+        width: 30vw;
+        margin: 200px auto;
+        text-align: center;
+      }
+      input {
+        width: 200px;
+        height: 30px;
+        margin-bottom: 10px;
+      }
+      .resultBox {
+        font-size: 30px;
+        margin-top: 30px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+    </style>
+
+    <script>
+      window.addEventListener("load", function () {
+        const form = document.querySelector("form");
+        const userId = document.querySelector("#userId");
+        const userpw = document.querySelector("#userpw");
+        const resultBox = document.createElement("div");
+        resultBox.classList.add("resultBox");
+        form.appendChild(resultBox);
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const data = {
+            userId: userId.value,
+            userpw: userpw.value,
+          };
+          try {
+            let response = await axios({
+              method: "post",
+              url: "/practiceLogin",
+              data: data,
+            });
+
+            console.log(response.data); // 서버에서 보내준 응답 확인
+            let loginState = response.data.isSuccess;
+            let nickName = response.data.nickName;
+            if (loginState) {
+              // console.log(loginState);
+
+              resultBox.textContent = `${nickName}님 환영합니다!`;
+              resultBox.style.color = "green";
+            } else {
+              resultBox.textContent = "아이디와 비밀번호를 다시 확인해주세요.";
+              resultBox.style.color = "red";
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form>
+      <input type="text" name="userId" id="userId" placeholder="아이디" />
+      <br />
+      <input type="password" name="userpw" id="userpw" placeholder="비밀번호" />
+      <br />
+
+      <button type="submit">로그인</button>
+    </form>
+  </body>
+</html>
