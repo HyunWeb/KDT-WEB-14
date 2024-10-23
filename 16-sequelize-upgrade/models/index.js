@@ -12,6 +12,7 @@ const sequelize = new Sequelize(
 // TODO: 모델 모듈 불러오기
 const Player = require("./Player")(sequelize, Sequelize.DataTypes);
 const Profile = require("./Profile")(sequelize, Sequelize.DataTypes);
+const Team = require("./Team")(sequelize, Sequelize.DataTypes);
 
 //TODO: 관계 형성
 
@@ -22,6 +23,11 @@ Player.hasOne(Profile, {
   onUpdate: "CASCADE",
 });
 Profile.belongsTo(Player, { foreignKey: "player_id" });
+
+// 2) Team : Player = 1 : N
+// 한 팀에는 여러 선수가 존재
+Team.hasMany(Player, { foreignKey: "team_id" });
+Player.belongsTo(Team, { foreignKey: "team_id" });
 
 //TODO: 관계를 정리한 모델들을 db 객체에 저장
 db.Player = Player;

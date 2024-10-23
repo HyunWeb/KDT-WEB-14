@@ -1,26 +1,22 @@
 // @param {import("sequelize").Sequelize} Sequelize : sequelize 라이브러리에서 Sequelize 클래스를 가져와서 명시
 /**
- * Profile 모델을 정의하는 함수
+ * Team 모델을 정의하는 함수
  * @param {import("sequelize").Sequelize} Sequelize
  * @param {import("sequelize").DataTypes} DataTypes
  */
 
-const ProfileModel = (Sequelize, DataTypes) => {
+const TeamModel = (Sequelize, DataTypes) => {
   return Sequelize.define(
-    "profile",
+    "Team",
     {
-      profile_id: {
+      Team_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true,
       },
-      position: {
+      name: {
         type: DataTypes.STRING(63),
-        allowNull: false,
-      },
-      salary: {
-        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
@@ -29,4 +25,4 @@ const ProfileModel = (Sequelize, DataTypes) => {
     }
   );
 };
-module.exports = ProfileModel;
+module.exports = TeamModel;
