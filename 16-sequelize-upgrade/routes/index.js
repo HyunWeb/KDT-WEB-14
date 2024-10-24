@@ -22,4 +22,11 @@ router.patch("/players/:player_id/team", controller.patchPlayer);
 // delete /players/:player_id - 특정 선수 삭제
 router.delete("/players/:player_id", controller.deletePlayer);
 
+// ~~~~~~~~~~ 팀 관련 API ~~~~~~~~~~~~
+// get /teams - 전체 팀 조회
+router.get("/teams", controller.getTeams);
+
+// get/teams/:team_id/players - 특정 팀의 모든 선수 조회
+router.get("/teams/:team_id/players", controller.getTeamPlayers);
+
 module.exports = router;
