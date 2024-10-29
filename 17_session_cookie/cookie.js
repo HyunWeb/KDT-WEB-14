@@ -30,7 +30,7 @@ const cookieConfig = {
   // signed: 쿠키의 암호화 결정 (res.signedCookies 객체에 들어있음)
   httpOnly: true,
   maxAge: 60 * 1000, // 60초
-  signed: true, // 암호화 쿠키
+  signed: true, // 암호화 쿠키보
 };
 
 app.get("/", (req, res) => {
