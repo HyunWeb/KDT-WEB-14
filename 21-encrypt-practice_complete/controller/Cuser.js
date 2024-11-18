@@ -2,7 +2,7 @@
 const User = require("../models/index").User;
 // TODO: bcrypt 패키지 불러오기
 
-const { bcryptPassword } = require("../utils/encrypt");
+const { bcryptPassword, compareFunc } = require("../utils/encrypt");
 
 exports.index = (req, res) => {
   // index.ejs 렌더 (data 키로 session 객체의 userInfo 전달)
@@ -27,7 +27,6 @@ exports.getUsers = async (req, res) => {
     const users = await User.findAll();
     res.render("users", { name: req.session.userInfo.name, users });
   } else {
-    // 로그인 안되어 있으면 전체 조회 전에 로그인부터
     res.redirect("/login");
   }
 };
@@ -35,10 +34,11 @@ exports.getUsers = async (req, res) => {
 exports.getProfile = async (req, res) => {
   // 1. userInfo 세션에 저장된 id를 이용해 현재 로그인한 유저의 id 값으로 특정 유저 정보 하나를 조회
   // 2. profile.ejs 랜더 + data 키로 특정 유저를 찾은 결과를 넘김
+
   const user = await User.findOne({
     where: { id: req.session.userInfo.id },
   });
-  res.render("profile"), { data: user };
+  res.render("profile", { data: user });
 };
 
 exports.postRegister = async (req, res) => {
@@ -46,13 +46,13 @@ exports.postRegister = async (req, res) => {
   // 응답은 {result: true}
 
   try {
-    const { pw, name, userId } = req.body;
+    const { pw, name, userid } = req.body;
     const hash = bcryptPassword(pw);
 
     await User.create({ userid, name, pw: hash });
-    res.json({ reuslt: true });
-  } catch (err) {
-    console.error(err);
+    res.json({ result: true });
+  } catch (error) {
+    console.error(error);
     res.send("회원가입 실패");
   }
 };
@@ -65,18 +65,11 @@ exports.postLogin = async (req, res) => {
       where: { userid },
     });
     // Step2. 입력된 비밀번호 암호화하여 기존 데이터와 비교
-    // 2-1. 유저 있음
-    // 2-1-1. 비밀번호 일치;
-    //    userInfo 키 값으로 세션 생성 (userInfo는 name키와 id 키를 갖는 "객체")
-    //    응답 데이터: { result: true, data: step1에서 찾은 유저 }
-    // 2-1-2. 비밀번호 불일치;
-    //    응답 데이터; { result: false, message: '비밀번호가 틀렸습니다.' }
-    // 2-2. 유저 없음
-    //    응답 데이터; { result: false, message: '존재하는 사용자가 없습니다' }
     if (user) {
       const result = compareFunc(pw, user.pw);
+
       if (result) {
-        // 토큰이면 여기서 대신 토큰을 생성한다.
+        // 2-1-1. 비밀번호 일치;
         req.session.userInfo = { name: user.name, id: user.id };
         res.json({ result: true, data: user });
       } else {
@@ -85,8 +78,8 @@ exports.postLogin = async (req, res) => {
     } else {
       res.json({ result: false, message: "존재하는 사용자가 없습니다" });
     }
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     res.send("Internal Server Error");
   }
 };
@@ -98,9 +91,9 @@ exports.patchProfile = async (req, res) => {
     const { name, pw, id } = req.body;
     await User.update({ name, pw }, { where: { id } });
     res.json({ result: true });
-  } catch (err) {
-    console.error(err);
-    res.send("Internal Server Error");
+  } catch (error) {
+    console.error(error);
+    res.send("Internal Sever Error");
   }
 };
 
@@ -115,12 +108,12 @@ exports.deleteUser = async (req, res) => {
     });
     req.session.destroy((err) => {
       if (err) {
-        console.error(error);
+        console.error(err);
       }
       res.json({ result: true });
     });
-  } catch (err) {
-    console.error(err);
-    res.send("Internal Server Error");
+  } catch (error) {
+    console.error(error);
+    res.send("Internal Sever Error");
   }
 };

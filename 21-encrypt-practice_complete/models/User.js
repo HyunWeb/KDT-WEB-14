@@ -1,17 +1,12 @@
 // TODO: User 모델 정의
-/**
- * @param {import("sequelize").Sequelize} Sequelize
- * @param {import("sequelize").DataTypes} DataTypes
- */
-
-const user = (Sequelize, DataTypes) => {
-  return Sequelize.define(
+const User = function (Sequelize, DataTypes) {
+  const model = Sequelize.define(
     "user",
     {
       id: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
         allowNull: false,
+        primaryKey: true,
         autoIncrement: true,
       },
       pw: {
@@ -32,6 +27,8 @@ const user = (Sequelize, DataTypes) => {
       timestamps: false,
     }
   );
+
+  return model;
 };
 
-module.exports = user;
+module.exports = User;
