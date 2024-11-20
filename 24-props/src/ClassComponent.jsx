@@ -22,10 +22,10 @@ export default class ClassComponent extends Component {
     name: propTypes.string,
   };
 }
-ClassComponent.defaultProps = {
-  name: "철수",
-};
-
 ClassComponent.propTypes = {
   name: propTypes.string.isRequired,
+};
+
+ClassComponent.defaultProps = {
+  name: "철수",
 };

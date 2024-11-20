@@ -4,9 +4,11 @@ export default class Counter extends Component {
   state = {
     number: 0,
   };
+
   render() {
     // state는 this.state로 접근 가능
     const { number } = this.state;
+
     return (
       <div>
         <h1>{number}</h1>

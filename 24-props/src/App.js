@@ -29,6 +29,7 @@ function App() {
         type="자기계발서"
       />
       <hr />
+
       <ClassPractice
         text="App 컴포넌트에서 넘겨준 text props입니다."
         valid={myfunction}

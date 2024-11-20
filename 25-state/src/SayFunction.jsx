@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function SayFunction() {
   console.log(useState("welcome!")); // ['welcome!', f]
+
   const [message, setMessage] = useState("welcome!");
   // 'welcome!' : 상태 초기값, (숫자, 문자, 배열 값의 형태 자유로움)
   // message : 메세지 상태
