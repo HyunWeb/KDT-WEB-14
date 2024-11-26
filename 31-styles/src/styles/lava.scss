@@ -1,0 +1,54 @@
+@mixin position($top, $left, $color) {
+  top: $top;
+  left: $left;
+  background-color: $color;
+}
+@mixin makeCircle($width, $height, $borderRadius, $posiiton) {
+  width: $width;
+  height: $height;
+  border-radius: $borderRadius;
+  position: $posiiton;
+}
+@mixin moving($top, $left) {
+  top: $top;
+  left: $left;
+}
+.larva {
+  position: relative;
+  height: 400px;
+  .body {
+    @include makeCircle(100px, 100px, 50%, absolute);
+
+    &.body1 {
+      @include position(100px, 100px, rgb(0, 0, 166));
+      position: relative;
+      .eye-white {
+        @include makeCircle(40px, 40px, 50%, absolute);
+        @include moving(15px, 20px);
+        background-color: white;
+        .eye-black {
+          @include makeCircle(20px, 20px, 50%, absolute);
+          @include moving(5px, 2px);
+          background-color: black;
+        }
+      }
+    }
+    &.body2 {
+      @include position(150px, 160px, rgb(36, 61, 206));
+    }
+    &.body3 {
+      @include position(190px, 200px, rgb(52, 118, 231));
+    }
+    &.body4 {
+      @include position(240px, 220px, rgb(47, 146, 233));
+    }
+    &.body5 {
+      @include position(280px, 280px, rgb(140, 191, 253));
+      z-index: 10;
+    }
+  }
+  .grass {
+    position: absolute;
+    @include moving(260px, 145px);
+  }
+}

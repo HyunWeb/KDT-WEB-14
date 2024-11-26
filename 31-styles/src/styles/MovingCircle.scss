@@ -1,0 +1,43 @@
+$color-first: pink;
+$color-second: yellow;
+$color-third: green;
+@mixin transformCircle($name, $percentage) {
+  @keyframes #{$name} {
+    from {
+      transform: translateX(0vw) translateY(0vw);
+    }
+    25% {
+      transform: translateX($percentage) translateY(0vw);
+    }
+    50% {
+      transform: translateX($percentage) translateY($percentage);
+    }
+    75% {
+      transform: translateX(0vw) translateY($percentage);
+    }
+    to {
+      transform: translateX(0vw) translateY(0vw);
+    }
+  }
+  animation: $name 4s ease-in-out infinite;
+}
+.MovingCircle-container {
+  height: 100vh;
+  .box {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    &.pink {
+      @include transformCircle(slide-in1, 10vw);
+      background-color: $color-first;
+    }
+    &.yellow {
+      @include transformCircle(slide-in2, 20vw);
+      background-color: $color-second;
+    }
+    &.green {
+      @include transformCircle(slide-in3, 30vw);
+      background-color: $color-third;
+    }
+  }
+}
